@@ -1,7 +1,17 @@
 import axiosInstance from '../axios';
+import type {Hobby} from './hobbyService';
 
 // Fungsi untuk mendapatkan semua orang (people)
-export const getPeople = async (page: string, limit: string) => {
+export interface People {
+  id: string;
+  name: string;
+  age: number;
+  hobbies: Hobby[];
+  createdAt: Date;
+  updatedAt: Date;
+}
+
+export const getPeople = async (page: string | number, limit: string | number) => {
   try {
     const response = await axiosInstance.get(`/people?page=${page}&limit=${limit}`);
     return response.data;

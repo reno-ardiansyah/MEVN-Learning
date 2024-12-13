@@ -7,7 +7,7 @@ import type { People } from '@/services/peopleService';
 import type { Hobby } from '@/services/hobbyService';
 
 const showModal = ref(false);
-const editingPerson = ref<People | null>(null);
+const editingPerson = ref<any>(null);
 const allHobbies = ref<Hobby[]>([]);  // Menyimpan daftar hobby yang bisa dipilih
 
 // Mengambil data hobby untuk dipilih
